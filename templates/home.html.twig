@@ -3,6 +3,39 @@
 {% block body %}
 <div class="container">
 home for a table and new stuff
+
+
+<p>Received : {{dump(data)}} </p> 
+List of receipts:
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">ID</th>
+      <th scope="col">HEALTHY FOOD</th>
+      <th scope="col">UNHEALTHY FOOD</th>
+      <th scope="col">FARMACY</th>
+      <th scope="col">CLOTHES</th>
+      <th scope="col">HOUSEHOLD</th>
+      <th scope="col">DATE</th>
+    </tr>
+  </thead>
+  <tbody>
+  {% for item in data %}
+    <tr>
+      <th scope="row">No_{{item.id}} </th>
+      <th scope="row"> {{item.healthyFood}} zł</th>
+      <th scope="row"> {{item.unhealthyFood}} zł</th>
+      <th scope="row"> {{item.farmacy}} zł</th>
+      <th scope="row"> {{item.clothing}} zł</th>
+      <th scope="row"> {{item.household}} zł</th>
+      {# <th scope="row"> {{item.create_date}} </th> #}
+    </tr>
+   {% endfor %}
+    
+  </tbody>
+</table>
 </div>
+
+
 
 {% endblock %}

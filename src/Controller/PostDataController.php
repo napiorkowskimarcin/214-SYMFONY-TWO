@@ -30,10 +30,29 @@ class PostDataController extends AbstractController
 
     /**
      * @Route("/create", name="create")
+     * @param Request $request
+     * @return Response
      */
     public function create(Request $request){
+        //Entity class
         $post = new Budget();
+        
 
+        //Post data
+        $post->setHealthyFood(21);
+        $post->setUnHealthyFood(22);
+        $post->setHousehold(23);
+        $post->setFarmacy(24);
+        $post->setClothing(25);
+        $post->setCreateDate();
+        
+        //DB connection
+        $em = $this->getDoctrine()->getManager();
+        $em->persist($post);
+        $em->flush();
+
+        //Response from server
+        return new Response(content: 'created');
         
         
     }

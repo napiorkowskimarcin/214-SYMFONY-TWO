@@ -43,7 +43,7 @@ class Budget
     private $clothing;
 
     /**
-     * @ORM\Column(type="datetime")
+     * @ORM\Column(type="string")
      */
     private $create_date;
 
@@ -112,14 +112,17 @@ class Budget
         return $this;
     }
 
-    public function getCreateDate(): ?\DateTimeInterface
+    public function getCreateDate(): ?string
     {
         return $this->create_date;
     }
 
-    public function setCreateDate(\DateTimeInterface $create_date): self
+    public function setCreateDate(): self
     {
-        $this->create_date = $create_date;
+        $date = new \DateTime('NOW');
+        $date = $date->format('Y-m-d H:i:s');
+        $this->create_date = $date;
+        
 
         return $this;
     }
