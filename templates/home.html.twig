@@ -2,10 +2,12 @@
 
 {% block body %}
 <div class="container">
-home for a table and new stuff
+<div class="mb-3" >
+Place to operate on calculated values
+</div>
 
 
-<p>Received : {{dump(data)}} </p> 
+{# <p>Received : {{dump(data)}} </p>  #}
 List of receipts:
 <table class="table">
   <thead>
@@ -28,7 +30,7 @@ List of receipts:
       <th scope="row"> {{item.farmacy}} zł</th>
       <th scope="row"> {{item.clothing}} zł</th>
       <th scope="row"> {{item.household}} zł</th>
-      {# <th scope="row"> {{item.create_date}} </th> #}
+      <th scope="row"> {{item.createdate}} </th>
     </tr>
    {% endfor %}
     

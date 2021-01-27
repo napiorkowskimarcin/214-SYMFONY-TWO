@@ -39,12 +39,12 @@ class PostDataController extends AbstractController
         
 
         //Post data
-        $post->setHealthyFood(21);
-        $post->setUnHealthyFood(22);
-        $post->setHousehold(23);
-        $post->setFarmacy(24);
-        $post->setClothing(25);
-        $post->setCreateDate();
+        $post->setHealthyFood(231);
+        $post->setUnHealthyFood(232);
+        $post->setHousehold(233);
+        $post->setFarmacy(234);
+        $post->setClothing(235);
+        $post->setCreatedate();
         
         //DB connection
         $em = $this->getDoctrine()->getManager();

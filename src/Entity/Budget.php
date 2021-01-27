@@ -45,7 +45,7 @@ class Budget
     /**
      * @ORM\Column(type="string")
      */
-    private $create_date;
+    private $createdate;
 
     public function getId(): ?int
     {
@@ -112,16 +112,16 @@ class Budget
         return $this;
     }
 
-    public function getCreateDate(): ?string
+    public function getCreatedate(): ?string
     {
-        return $this->create_date;
+        return $this->createdate;
     }
 
-    public function setCreateDate(): self
+    public function setCreatedate(): self
     {
         $date = new \DateTime('NOW');
         $date = $date->format('Y-m-d H:i:s');
-        $this->create_date = $date;
+        $this->createdate = $date;
         
 
         return $this;

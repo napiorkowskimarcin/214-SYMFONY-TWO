@@ -27,7 +27,7 @@ class MainController extends AbstractController
     {
         $data = $budgetRepository->findAll();
         
-        // dump($data);
+         dump($data);
         return $this->render('home.html.twig', ['data'=> $data]);
     }
 
