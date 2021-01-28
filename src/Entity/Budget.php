@@ -15,37 +15,37 @@ class Budget
      * @ORM\GeneratedValue
      * @ORM\Column(type="integer")
      */
-    private $id;
+    public $id;
 
     /**
      * @ORM\Column(type="decimal")
      */
-    private $healthyFood;
+    public $healthyFood;
 
     /**
      * @ORM\Column(type="decimal")
      */
-    private $unhealthyFood;
+    public $unhealthyFood;
 
     /**
      * @ORM\Column(type="decimal")
      */
-    private $farmacy;
+    public $farmacy;
 
     /**
      * @ORM\Column(type="decimal")
      */
-    private $household;
+    public $household;
 
     /**
      * @ORM\Column(type="decimal")
      */
-    private $clothing;
+    public $clothing;
 
     /**
      * @ORM\Column(type="string")
      */
-    private $createdate;
+    public $createdate;
 
     public function getId(): ?int
     {
@@ -126,4 +126,11 @@ class Budget
 
         return $this;
     }
+    //to operate over array of objects
+    public function __isset($prop) : bool
+    {
+        return isset($this->$prop);
+    }
+    
+     
 }

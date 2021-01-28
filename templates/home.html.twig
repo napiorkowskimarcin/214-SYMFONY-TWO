@@ -1,9 +1,42 @@
 {% extends "base.html.twig" %}
 
 {% block body %}
+
+<script>
+window.onload = function () {
+ let totalArrays = document.getElementById('totalArray').textContent;
+ totalArrays = totalArray.textContent;
+ totalArrays =  JSON.parse(totalArrays);
+const chart = new CanvasJS.Chart("chartContainer", {
+	animationEnabled: true,
+	exportEnabled: true,
+	title:{
+		text: "Average Expense Share Per Day "
+	},
+	subtitles: [{
+		text: "Prices in PLN"
+	}],
+	data: [{
+		type: "pie",
+		showInLegend: "true",
+		legendText: "{label}",
+		indexLabelFontSize: 16,
+		indexLabel: "{label} - #percent%",
+		yValueFormatString: "#,##0zł",
+		dataPoints: totalArrays,
+	}]
+});
+
+chart.render();
+ 
+}
+</script>
+
 <div class="container">
+<p id="totalArray" style="display:none;">{{totalArray}} </p>
 <div class="mb-3" >
-Place to operate on calculated values
+<div id="chartContainer" style="height: 370px; width: 100%;"></div>
+<script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
 </div>
 
 
