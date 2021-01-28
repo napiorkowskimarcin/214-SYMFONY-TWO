@@ -3,7 +3,9 @@
 {% block body %}
 <div class="container">
 <div class="d-flex justify-content-center">
-    <form action="create_receipt.php" method="post">
+
+{{form(form)}}
+    {# <form action="create_receipt.php" method="post">
     <div class="form-group">
         <label for="healthyFood">Healthy Food :</label>
         <input type="number" class="form-control" name="healthyFood" placeholder="groceries..." autocomplete="off" step="0.01">
@@ -25,7 +27,7 @@
         <input type="number" class="form-control" name="clothing" placeholder="just clothes..." autocomplete="off" step="0.01">
     </div>    
         <button class="btn btn-primary">Add receipt!</button>
-    </form>
+    </form> #}
 </div>
 </div>
 
