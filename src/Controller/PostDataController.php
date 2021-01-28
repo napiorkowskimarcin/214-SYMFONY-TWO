@@ -26,20 +26,15 @@ class PostDataController extends AbstractController
         //Entity class
         $post = new Budget();
         $form = $this->createForm(PostBudgetType::class, $post);
-        
-
-        //Post data
-        // $post->setHealthyFood(231);
-        // $post->setUnHealthyFood(232);
-        // $post->setHousehold(233);
-        // $post->setFarmacy(234);
-        // $post->setClothing(235);
-        // $post->setCreatedate();
-        
-        //DB connection
-         $em = $this->getDoctrine()->getManager();
-        // $em->persist($post);
-        // $em->flush();
+        //post to database
+        $form->handleRequest($request);
+        if($form->isSubmitted()){
+            $em = $this->getDoctrine()->getManager();
+            $em->persist($post);
+            $em->flush();
+            return $this->redirect($this->generateUrl('home'));
+        };
+      
 
         //Response from server
         return $this->render('new.html.twig', ['form'=> $form->createView()]);

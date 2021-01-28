@@ -10,7 +10,8 @@ used and what for:
 //composer require annotations + doctrine/annotations + doctrine(orm) - to make:controller, db connection and routing working well.  
 //composer require dump - to get var_dump in symfony way  
 //composer require template - for templating views.  
-//composer require form validator - for post and forms.
+//composer require form validator - for post and forms.  
+//composer require symfony/web-profiler-bundle -to see requests
 
 other stuff:
 //symfony server:start for 5.2 to start a web server and get acces via localhost no htdocs.

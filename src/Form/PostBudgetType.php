@@ -19,7 +19,11 @@ class PostBudgetType extends AbstractType
             ->add('household')
             ->add('clothing')
             ->add('createdate')
-            ->add('save', SubmitType::class)
+            ->add('save', SubmitType::class, [
+                'attr' => [
+                    'class'=> 'btn btn-primary float-end'
+                ]
+            ])
         ;
     }
 
