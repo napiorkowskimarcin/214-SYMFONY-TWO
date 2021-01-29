@@ -7,6 +7,7 @@ use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 use Symfony\Component\Form\Extension\Core\Type\SubmitType;
+//use Symfony\Component\Form\Extension\Core\Type\DateTimeType;
 
 class PostBudgetType extends AbstractType
 {
@@ -17,8 +18,14 @@ class PostBudgetType extends AbstractType
             ->add('unhealthyFood')
             ->add('farmacy')
             ->add('household')
-            ->add('clothing')
-            ->add('createdate')
+            ->add('clothing',null, [
+                'attr' => [
+                    'class'=> 'mb-3'
+                ]
+            ])
+            // ->add('createdate', DateTimeType::class, [
+            //     'data' => new \DateTime()
+            // ])
             ->add('save', SubmitType::class, [
                 'attr' => [
                     'class'=> 'btn btn-primary float-end'

@@ -131,6 +131,12 @@ class Budget
     {
         return isset($this->$prop);
     }
-    
+    //to have date without setting it maually (time of action based on the time of creation)
+    public function __construct()
+    {
+        $date = new \DateTime('NOW');
+        $date = $date->format('Y-m-d H:i:s');
+        $this->createdate = $date;
+    }
      
 }
