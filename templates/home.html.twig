@@ -4,9 +4,9 @@
 
 <script>
 window.onload = function () {
- let totalArrays = document.getElementById('totalArray').textContent;
- totalArrays = totalArray.textContent;
- totalArrays =  JSON.parse(totalArrays);
+ let chartArray = document.getElementById('chartArray').textContent;
+ 
+ chartArray =  JSON.parse(chartArray);
 const chart = new CanvasJS.Chart("chartContainer", {
 	animationEnabled: true,
 	exportEnabled: true,
@@ -23,7 +23,7 @@ const chart = new CanvasJS.Chart("chartContainer", {
 		indexLabelFontSize: 16,
 		indexLabel: "{label} - #percent%",
 		yValueFormatString: "#,##0zł",
-		dataPoints: totalArrays,
+		dataPoints: chartArray,
 	}]
 });
 
@@ -33,10 +33,30 @@ chart.render();
 </script>
 
 <div class="container">
-<p id="totalArray" style="display:none;">{{totalArray}} </p>
+<div class="row"> 
+{#  #}
+<div class="col-md">
+<div class="card" style="width: 18rem;">
+  <div class="card-body">
+    <h5 class="card-title">Total spent:</h5>
+    <p> Healthy food:    {{totalData.healthyFood}}         </p>
+    <p> Unealthy food:   {{totalData.unhealthyFood}}            </p>
+    <p> Farmacy:     {{totalData.farmacy}}         </p>
+    <p> Clothes:      {{totalData.clothing}}        </p>
+    <p> Household:     {{totalData.household}}         </p>
+  </div>
+</div>
+</div>
+
+{#  #}
+{#  #}
+<div class="col-8 ">
+<p id="chartArray" style="display:none;">{{chartArray}} </p>
 <div class="mb-3" >
 <div id="chartContainer" style="height: 370px; width: 100%;"></div>
 <script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
+</div>
+</div>
 </div>
 
 
@@ -57,7 +77,7 @@ List of receipts:
   <tbody>
   {% for item in data %}
     <tr>
-      <th scope="row">No_{{item.id}} </th>
+      <th scope="row">{{item.id}} </th>
       <th scope="row"> {{item.healthyFood}} zł</th>
       <th scope="row"> {{item.unhealthyFood}} zł</th>
       <th scope="row"> {{item.farmacy}} zł</th>

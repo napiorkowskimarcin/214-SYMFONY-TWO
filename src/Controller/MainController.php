@@ -25,19 +25,27 @@ class MainController extends AbstractController
     $data = $budgetRepository->findAll();
 
 
-
-    $totalArray = array(
-	array("label"=> "HEALTHY FOOD", "y"=> array_sum(array_column($data, 'healthyFood'))),
-	array("label"=> "UNHEALTHY FOOD", "y"=>  array_sum(array_column($data, 'unhealthyFood'))),
-	array("label"=> "FARMACY", "y"=>  array_sum(array_column($data, 'farmacy'))),
-	array("label"=> "CLOTHES", "y"=>  array_sum(array_column($data, 'clothing'))),
-    array("label"=> "HOUSEHOLD", "y"=>  array_sum(array_column($data, 'household'))),
+    $totalData = array(
+	"healthyFood"=> array_sum(array_column($data, 'healthyFood')),
+	"unhealthyFood"=>  array_sum(array_column($data, 'unhealthyFood')),
+	"farmacy"=>  array_sum(array_column($data, 'farmacy')),
+	"clothing"=>  array_sum(array_column($data, 'clothing')),
+    "household"=>  array_sum(array_column($data, 'household')),
     );
 
-    $totalArray = json_encode($totalArray,JSON_NUMERIC_CHECK);
-    // dump($totalArray);
+
+    $chartArray = array(
+	array("label"=> "HEALTHY FOOD", "y"=> $totalData['healthyFood']),
+	array("label"=> "UNHEALTHY FOOD", "y"=>  $totalData['unhealthyFood']),
+	array("label"=> "FARMACY", "y"=>  $totalData['farmacy']),
+	array("label"=> "CLOTHES", "y"=>  $totalData['clothing']),
+    array("label"=> "HOUSEHOLD", "y"=>  $totalData['household']),
+    );
+
+    $chartArray = json_encode($chartArray,JSON_NUMERIC_CHECK);
+    //dump($chartArray);
         
-        return $this->render('home.html.twig', ['data'=> $data, 'totalArray'=>$totalArray]);
+        return $this->render('home.html.twig', ['data'=> $data, 'totalData'=> $totalData,    'chartArray'=>$chartArray]);
     }
 
 }

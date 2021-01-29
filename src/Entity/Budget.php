@@ -135,7 +135,8 @@ class Budget
     public function __construct()
     {
         $date = new \DateTime('NOW');
-        $date = $date->format('Y-m-d H:i:s');
+        $date = $date->format('Y-m-d');
+        //$date = $date->format('Y-m-d H:i');
         $this->createdate = $date;
     }
      
