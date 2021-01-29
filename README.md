@@ -15,8 +15,8 @@ used and what for:
 //composer require form validator - for post and forms.  
 //composer require symfony/web-profiler-bundle -to see requests
 
-other stuff:
-//symfony server:start for 5.2 to start a web server and get acces via localhost no htdocs.
+other stuff:  
+//symfony server:start for 5.2 to start a web server and get acces via localhost no htdocs.  
 //symfony console debug:router - to see all of the routes
 
 ## STEP1 - make controller:
