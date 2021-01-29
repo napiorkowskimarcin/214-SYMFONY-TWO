@@ -1,4 +1,6 @@
-### SYMFONY PROJECT - shortcut info to easily get back to basics.
+### SYMFONY PROJECT - working on a app in symfony to organize my home budget as I do in excel.
+
+![](gitimage/20210129-1.PNG)
 
 ## SETTINGS:
 
