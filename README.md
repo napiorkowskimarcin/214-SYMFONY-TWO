@@ -8,7 +8,7 @@
 
 ## MAIN TIPS:
 
-used and what for:
+used and what for:  
 //composer require annotations + doctrine/annotations + doctrine(orm) - to make:controller, db connection and routing working well.  
 //composer require dump - to get var_dump in symfony way  
 //composer require template - for templating views.  
